@@ -10,7 +10,7 @@ describe 'class BubbleSortBy' do
       expect(@bubble_sort_by.bubble_sort_by([7, 3, 4, 5, 9, 1, 2, 0])).to eq([0, 1, 2, 3, 4, 5, 7, 9])
     end
     it 'should sort an array of positive and negative integers' do
-     expect(@bubble_sort_by.bubble_sort_by([7, 3, 4, -5, 9, 1, 2, 0])).to eq([-5, 0, 1, 2, 3, 4, 7, 9])
+      expect(@bubble_sort_by.bubble_sort_by([7, 3, 4, -5, 9, 1, 2, 0])).to eq([-5, 0, 1, 2, 3, 4, 7, 9])
     end
     it 'should sort an array of positive and negative integers with duplicate negative values' do
       expect(@bubble_sort_by.bubble_sort_by([7, 3, -4, -4, 9, 1, 2, 0])).to eq([-4, -4, 0, 1, 2, 3, 7, 9])
@@ -25,3 +25,4 @@ describe 'class BubbleSortBy' do
     end
   end
 end
+
