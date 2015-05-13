@@ -4,10 +4,13 @@ require 'spec_helper'
 describe 'class Array' do
   before :all do
     @an_array = [1,2,3,4,5,6]
+    @results = []
   end
   describe "#my_each" do
     it 'should call the given block once for each element in self, passing that element as a parameter' do
-      expect(@an_array.my_each do |element| print [] << (element * 2) end).to eq([2, 4, 6, 8, 10, 12])
+      expect(@an_array.my_each do |element| @results << (element * 2)
+             @results
+             end).to eq([2, 4, 6, 8, 10, 12])
     end
     # describe "#my_each_with_index" do
     #   it 'should sort an array of positive integers' do
