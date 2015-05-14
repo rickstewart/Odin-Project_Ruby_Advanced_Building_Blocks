@@ -1,13 +1,10 @@
-#
-gem 'rspec'
-require 'rspec/core/rake_task'
+begin
+  require 'rspec/core/rake_task'
 
-task :default => :spec
+  RSpec::Core::RakeTask.new(:spec)
 
-desc "Run tests for Odin Ruby Building Blocks Exercises"
-RSpec::Core::RakeTask.new do |task|
-  dir = Rake.application.original_dir
-  task.pattern = "#{dir}/*_spec.rb"
-  task.rspec_opts = [ "-I#{dir}", '-f documentation', '-r ./rspec_config']
-  task.verbose = false
+  task :default => :spec do
+  end
+rescue LoadError
+  puts "RSpec is not installed!"
 end
