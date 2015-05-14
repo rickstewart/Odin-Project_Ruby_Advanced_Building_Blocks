@@ -3,8 +3,7 @@ begin
 
   RSpec::Core::RakeTask.new(:spec)
 
-  task :default => :spec do
-  end
+  task :default => :spec
 rescue LoadError
   puts "RSpec is not installed!"
 end
