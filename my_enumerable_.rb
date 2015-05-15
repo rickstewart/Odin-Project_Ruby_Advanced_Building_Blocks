@@ -35,15 +35,13 @@ class Hash
 
 
   def my_each_with_index
-    def my_each
-      if block_given?
-        array = self.to_a
-        for i in 0..(array.size - 1)
-          yield array[i][0], array[i][1], i
-        end
-      else
-        self.to_enum
+    if block_given?
+      array = self.to_a
+      for i in 0..(array.size - 1)
+        yield array[i][0], array[i][1], i
       end
+    else
+      self.to_enum
     end
   end
 end
@@ -204,7 +202,6 @@ end
 # puts "=============="
 # a.my_each_with_index { |x, y| p x, y }
 # puts "----------------------"
-# h = {7 => 14, 8 => 16, 9 => 18}
 # c= h.to_enum
 # puts c.next
 # puts c.next

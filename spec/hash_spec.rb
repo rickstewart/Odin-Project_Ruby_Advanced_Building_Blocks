@@ -22,4 +22,25 @@ describe 'class Hash' do
       expect(accumulator).to eq({one: 1,two: 2, three: 3,four: 4})
     end
   end
+
+  describe "#my_each_with_index" do
+    it 'calls block once for each key/value pair in self (a Hash), passing that pair plus an index to the block as a parameter' do
+      accumulator = Hash.new
+      {one: 1,two: 2, three: 3,four: 4}.my_each_with_index { |key, value, i| accumulator[key] = [i, (value * 2)] }
+      expect(accumulator).to eq({one: [0,2],two: [1,4], three: [2,6],four: [3,8]})
+    end
+  end
+
+  describe "#my_each_with_index" do
+    it 'if no block is given an Enumerator of the Hash is returned' do
+      accumulator = Array.new
+      enum = {one: 1,two: 2, three: 3,four: 4}.my_each_with_index
+      accumulator << enum.next
+      accumulator << enum.next
+      accumulator << enum.next
+      accumulator << enum.next
+      accumulator = accumulator.to_h
+      expect(accumulator).to eq({one: 1,two: 2, three: 3,four: 4})
+    end
+  end
 end
