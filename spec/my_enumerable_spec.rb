@@ -30,15 +30,15 @@ describe 'module Enumerable' do
   end
 
   describe "#my_select" do
-    it 'if no block is given, an Enumerator of the Hash is returned instead.'
-    accumulator = Array.new
-    enum = {one: 1,two: 2, three: 3,four: 4}.my_each
-    accumulator << enum.next
-    accumulator << enum.next
-    accumulator << enum.next
-    accumulator << enum.next
-    accumulator = accumulator.to_h
-    puts accumulator
-    expect(accumulator).to eq({:one=>1, :two=>2, :three=>3, :four=>4})
+    it 'if no block is given, an Enumerator of the Hash is returned instead.' do
+      answer = Array.new
+      enum = {one: 1, two: 2, three: 3, four: 4}.my_each
+      answer << enum.next
+      answer << enum.next
+      answer << enum.next
+      answer << enum.next
+      expect(answer).to eq([[:one, 1], [:two, 2], [:three, 3], [:four, 4]])
+    end
   end
 end
+
