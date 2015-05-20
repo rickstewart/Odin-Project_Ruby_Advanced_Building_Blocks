@@ -292,8 +292,8 @@ describe 'module Enumerable' do
 
   describe "#my_inject" do
     it 'should .' do
-      returned = {one: 1, two: 2, three: 3, five: 5, seven: 7, eight: 8}.my_inject { |key, value| value * 2 }
-      expect(returned).to eq([2, 4, 6, 10, 14, 16])
+      returned = [1,2,3,4,5,6].my_inject {|memo, value| memo + value}
+      expect(returned).to eq(21)
     end
   end
 end
