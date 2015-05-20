@@ -155,15 +155,14 @@ module Enumerable
 
   def my_map
     if block_given?
+      @newArray = []
       if self.instance_of? Array
-        @newArray = []
         self.my_each { |value| @newArray.push (yield value) }
         @newArray
       else
         self.instance_of? Hash
-        @newHash = {}
-        self.my_each { |key, value| @newHash[key] = yield key, value }
-        @newHash
+        self.my_each { |key, value| @newArray.push (yield key, value) }
+        @newArray
       end
     else
       self.to_enum
@@ -173,9 +172,9 @@ module Enumerable
   def my_inject(arg = nil)
     if self.instance_of? Array
       if block_given?
-        self.my_each { |accum, value| yield accum, value }
-      elsif arg
-        self.my_each { |arg, value| yield arg, value }
+        self.my_each { |value| yield arg, value }
+      elsif
+        self.my_each { |value| yield arg, value }
       else
         self.to_enum
       end
@@ -183,7 +182,7 @@ module Enumerable
       self.instance_of? Hash
       array_from_hash = self.to_a
       if block_given?
-        array_from_hash.my_each { |accum, value| yield accum, value }
+        array_from_hash.my_each { |memo, value| yield memo, value }
       elsif arg
         array_from_hash.my_each { |arg, value| yield arg, value }
       else
@@ -192,27 +191,3 @@ module Enumerable
     end
   end
 end
-
-
-# a = [1, 2, 3, 4, 5]
-# b = a.my_each
-# puts b.next
-# puts b.next
-# puts b.next
-# puts "=============="
-# a.my_each_with_index { |x, y| p x, y }
-# puts "----------------------"
-# c= h.to_enum
-# puts c.next
-# puts c.next
-# d = a.my_count { |num| num % 2 == 0 }
-# puts d
-# e = a.my_count
-# puts e
-# f = a.my_count(3)
-# puts f
-# puts "*****************************"
-# g = h.map
-# puts h
-#
-
