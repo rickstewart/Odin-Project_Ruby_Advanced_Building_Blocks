@@ -155,14 +155,14 @@ module Enumerable
 
   def my_map
     if block_given?
-      @newArray = []
+      newArray = []
       if self.instance_of? Array
-        self.my_each { |value| @newArray.push (yield value) }
-        @newArray
+        self.my_each { |value| newArray.push (yield value) }
+        newArray
       else
         self.instance_of? Hash
-        self.my_each { |key, value| @newArray.push (yield key, value) }
-        @newArray
+        self.my_each { |key, value| newArray.push (yield key, value) }
+        newArray
       end
     else
       self.to_enum
@@ -172,9 +172,12 @@ module Enumerable
   def my_inject(arg = nil)
     if self.instance_of? Array
       if block_given?
-        self.my_each { |value| yield arg, value }
-      elsif
-        self.my_each { |value| yield arg, value }
+       if arg == nil
+         accumulator = self.shift
+       else
+         accumulator = arg
+       end
+        self.my_each { |value| yield accumulator, value }
       else
         self.to_enum
       end
