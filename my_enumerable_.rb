@@ -169,14 +169,18 @@ module Enumerable
     end
   end
 
+  def accumulator(toBeAdded = nil)
+    @@summed += toBeAdded
+  end
+
   def my_inject(arg = nil)
     if self.instance_of? Array
       if block_given?
-       if arg == nil
-         accumulator = self.shift
-       else
-         accumulator = arg
-       end
+        if arg == nil
+          accumulator self.shift
+        else
+          accumulator arg
+        end
         self.my_each { |value| yield accumulator, value }
       else
         self.to_enum
@@ -193,4 +197,5 @@ module Enumerable
       end
     end
   end
+
 end
