@@ -192,9 +192,10 @@ module Enumerable
     end
     accumulated
   end
-
-  def multiply_els(an_array)
-    an_array.my_inject {|memo, value| memo * value}
-  end
 end
 
+class Multiply
+  def multiply_els(an_array)
+    an_array.my_inject { |memo, value| memo * value }
+  end
+end
