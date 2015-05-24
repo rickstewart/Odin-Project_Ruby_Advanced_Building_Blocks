@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Advanced Building Blocks</title>
+    <title></title>
 </head>
 <body>
 <h1>The Odin Project - Basic Ruby - Projects: Advanced Building Blocks</h1>
