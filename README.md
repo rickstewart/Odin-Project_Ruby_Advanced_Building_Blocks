@@ -11,24 +11,24 @@ http://www.theodinproject.com/ruby-programming/advanced-building-blocks?ref=lnav
 
 <h3>Project 1 - 1: Bubble Sort</h3>
 
-bubble_sort.rb implements the 'bubble sort' algorithm. 
+<h6>bubble_sort.rb implements the 'bubble sort' algorithm. 
 
-#bubble_sort takes an array and returns a sorted array.
+#bubble_sort takes an array and returns a sorted array.</h6>
 
 <h3>Project 1 - 2: Bubble Sort by</h3>
 
-bubble_sort_by.rb implements the 'bubble sort by' algorithm.
+<h6>bubble_sort_by.rb implements the 'bubble sort by' algorithm.
 
-#bubble_sort_by takes an array and returns a sorted array.
+#bubble_sort_by takes an array and returns a sorted array.</h6>
 
 <h3>Project 2: Enumerable Methods</h3>
 
-#my_enumerable implements selected methods of the enumerable module.
+<h6>#my_enumerable implements selected methods of the enumerable module.</h6>
 
 <h2>How to run the tests.</h2>
 
-To run the 64 RSpec unit tests simple fork or copy the Ruby_Advanced_Building_Blocks project 
+<h6>To run the 64 RSpec unit tests simple fork or copy the Ruby_Advanced_Building_Blocks project 
 to your hard drive, open a command prompt or terminal window to the folder that contains the Rakefile, 
-and type rake and hit the enter key.
+and type rake and hit the enter key.</h6>
 </body>
 </html>
