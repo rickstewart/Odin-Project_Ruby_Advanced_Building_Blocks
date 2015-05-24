@@ -27,8 +27,8 @@ http://www.theodinproject.com/ruby-programming/advanced-building-blocks?ref=lnav
 
 <h2>How to run the tests.</h2>
 
-<h6>To run the 64 RSpec unit tests simple fork or copy the Ruby_Advanced_Building_Blocks project 
-to your hard drive, open a command prompt or terminal window to the folder that contains the Rakefile, 
-and type rake and hit the enter key.</h6>
+<h6>To run the 64 RSpec unit tests simply copy the Ruby_Advanced_Building_Blocks project 
+to your hard drive, open a command prompt or terminal window to the folder that contains 
+the Rakefile, and type rake and hit the enter key.</h6>
 </body>
 </html>
