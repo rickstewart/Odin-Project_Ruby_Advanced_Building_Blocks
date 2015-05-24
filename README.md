@@ -11,13 +11,13 @@ http://www.theodinproject.com/ruby-programming/advanced-building-blocks?ref=lnav
 
 <h3>Project 1 - 1: Bubble Sort</h3>
 
-<h6>bubble_sort.rb implements the 'bubble sort' algorithm. 
+<h6>bubble_sort.rb implements the 'bubble sort' algorithm.</br>
 
 #bubble_sort takes an array and returns a sorted array.</h6>
 
 <h3>Project 1 - 2: Bubble Sort by</h3>
 
-<h6>bubble_sort_by.rb implements the 'bubble sort by' algorithm.
+<h6>bubble_sort_by.rb implements the 'bubble sort by' algorithm.</br>
 
 #bubble_sort_by takes an array and returns a sorted array.</h6>
 
