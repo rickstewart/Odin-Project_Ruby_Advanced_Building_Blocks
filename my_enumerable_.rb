@@ -153,16 +153,37 @@ module Enumerable
     count
   end
 
-  def my_map
-    if block_given?
-      newArray = []
+  def my_map(a_proc = nil)
+    new_array = []
+    new2_array = []
+    if a_proc && block_given?
       if self.instance_of? Array
-        self.my_each { |value| newArray.push (yield value) }
-        newArray
+        self.my_each { |value| new_array.push (yield value) }
+        new_array.my_each { |value| new2_array.push a_proc.call(value) }
+        new2_array
       else
         self.instance_of? Hash
-        self.my_each { |key, value| newArray.push (yield key, value) }
-        newArray
+        self.my_each { |key, value| new_array.push (yield key, value) }
+        new_array.my_each { |value| new2_array.push a_proc.call(value) }
+        new2_array
+      end
+    elsif a_proc
+      if self.instance_of? Array
+        self.my_each { |value| new_array.push a_proc.call(value) }
+        new_array
+      else
+        self.instance_of? Hash
+        self.my_each { |key, value| new_array.push a_proc.call(key, value) }
+        new_array
+      end
+    elsif block_given?
+      if self.instance_of? Array
+        self.my_each { |value| new_array.push (yield value) }
+        new_array
+      else
+        self.instance_of? Hash
+        self.my_each { |key, value| new_array.push (yield key, value) }
+        new_array
       end
     else
       self.to_enum
