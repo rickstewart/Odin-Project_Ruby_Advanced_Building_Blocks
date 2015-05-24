@@ -23,7 +23,7 @@ http://www.theodinproject.com/ruby-programming/advanced-building-blocks?ref=lnav
 
 <h3>Project 2: Enumerable Methods</h3>
 
-<h6>#my_enumerable implements selected methods of the enumerable module.</h6>
+<h6>my_enumerable.rb implements selected methods of the enumerable module.</h6>
 
 <h2>How to run the tests.</h2>
 
